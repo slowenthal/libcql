@@ -494,7 +494,7 @@ namespace cql {
             }
 
             boost::asio::async_read(*_transport,
-                                    boost::asio::buffer(&(*_response_message->buffer())[0], _response_message->size()),
+                                    boost::asio::buffer(_response_message->size() == 0 ? NULL : &(*_response_message->buffer())[0], _response_message->size()),
 #if BOOST_VERSION >= 104800
                                     boost::asio::transfer_exactly(header.length()),
 #else
@@ -572,6 +572,7 @@ namespace cql {
 
                     case CQL_OPCODE_SUPPORTED:
                         log(CQL_LOG_DEBUG, "received supported message " + _response_message->str());
+						std::cout << _response_message->str();   // STEVE
                         startup_write();
                         break;
 

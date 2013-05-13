@@ -39,7 +39,7 @@ endif()
 
 # Boost
 set(Boost_USE_MULTITHREADED ON)
-find_package(Boost 1.47.0 COMPONENTS system unit_test_framework)
+find_package(Boost 1.53.0 COMPONENTS system unit_test_framework)
 set(LIBS ${LIBS} ${Boost_LIBRARIES} )
 
 # Threading
@@ -77,11 +77,11 @@ SET_TARGET_PROPERTIES(${PROJECT_LIB_NAME} PROPERTIES VERSION ${libcql_VERSION_MA
 
 set_property(
   TARGET ${PROJECT_LIB_NAME}
-  APPEND PROPERTY COMPILE_FLAGS "-Wall -Werror -ansi -Wno-deprecated -pthread -g")
+  APPEND PROPERTY COMPILE_FLAGS "-Wall -W0")
 
 set_property(
   TARGET ${PROJECT_LIB_NAME}-static
-  APPEND PROPERTY COMPILE_FLAGS "-Wall -Werror -ansi -Wno-deprecated -pthread -g")
+  APPEND PROPERTY COMPILE_FLAGS "-Wall -W0 ")
 
 #-------------------
 # install target
