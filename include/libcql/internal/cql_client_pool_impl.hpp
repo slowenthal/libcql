@@ -48,20 +48,20 @@ namespace cql {
     {
 
     public:
-        cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
-                               cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
-                               cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback);
+        //cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
+        //                       cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
+        //                       cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback);
+
+        //cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
+        //                       cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
+        //                       cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback,
+        //                       cql::cql_client_pool_t::cql_log_callback_t     log_callback);
 
         cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
                                cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
                                cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback,
-                               cql::cql_client_pool_t::cql_log_callback_t     log_callback);
-
-        cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
-                               cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
-                               cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback,
-                               cql::cql_client_pool_t::cql_log_callback_t     log_callback,
-                               size_t                                         reconnect_limit);
+                               cql::cql_client_pool_t::cql_log_callback_t     log_callback = NULL,
+                               size_t                                         reconnect_limit = 0);
 
         virtual
         ~cql_client_pool_impl_t(){};

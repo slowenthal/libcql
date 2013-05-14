@@ -25,31 +25,6 @@
 
 cql::cql_client_pool_impl_t::cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
                                                     cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
-                                                    cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback) :
-    _ready(false),
-    _defunct(false),
-    _client_callback(client_callback),
-    _ready_callback(ready_callback),
-    _defunct_callback(defunct_callback),
-    _log_callback(NULL),
-    _reconnect_limit(0)
-{}
-
-cql::cql_client_pool_impl_t::cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
-                                                    cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
-                                                    cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback,
-                                                    cql::cql_client_pool_t::cql_log_callback_t     log_callback) :
-    _ready(false),
-    _defunct(false),
-    _client_callback(client_callback),
-    _ready_callback(ready_callback),
-    _defunct_callback(defunct_callback),
-    _log_callback(log_callback),
-    _reconnect_limit(0)
-{}
-
-cql::cql_client_pool_impl_t::cql_client_pool_impl_t(cql::cql_client_pool_t::cql_client_callback_t  client_callback,
-                                                    cql::cql_client_pool_t::cql_ready_callback_t   ready_callback,
                                                     cql::cql_client_pool_t::cql_defunct_callback_t defunct_callback,
                                                     cql::cql_client_pool_t::cql_log_callback_t     log_callback,
                                                     size_t                                         reconnect_limit) :
@@ -59,7 +34,8 @@ cql::cql_client_pool_impl_t::cql_client_pool_impl_t(cql::cql_client_pool_t::cql_
     _ready_callback(ready_callback),
     _defunct_callback(defunct_callback),
     _log_callback(log_callback),
-    _reconnect_limit(reconnect_limit)
+    _reconnect_limit(reconnect_limit),
+	_index(0)
 {}
 
 void
