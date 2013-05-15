@@ -93,7 +93,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libcql\cql-static.vcxproj">
+    <ProjectReference Include="..\cql-static.vcxproj">
       <Project>{1a3dc877-6e8f-420e-b01c-29b996dd0c5b}</Project>
     </ProjectReference>
   </ItemGroup>
